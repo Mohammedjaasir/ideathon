@@ -139,7 +139,7 @@ const HeroSection = () => {
 
         <div className="flex flex-col items-center gap-5">
           <motion.a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfcuXcn7lFSqHfIY47O9ZfjRrbsYwM6vajyVHl9AEXDKWGyeg/formResponse"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSezDufiSg5Lj8v-4IS-vQyR-8M7qK7H70Rb-cCE4h9_I_5wUQ/viewform?usp=publish-editor"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1, translateZ: "60px" }}
