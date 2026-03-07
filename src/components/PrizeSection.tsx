@@ -1,12 +1,12 @@
-import { motion } from "framer-motion";
 import { Trophy, Star, Sparkles, Medal } from "lucide-react";
+import { motion } from "framer-motion";
 
-const floatingParticles = Array.from({ length: 18 }).map((_, i) => ({
+const particles = Array.from({ length: 12 }).map((_, i) => ({
     id: i,
-    size: Math.random() * 6 + 3,
+    size: Math.random() * 5 + 3,
     x: Math.random() * 100,
-    delay: Math.random() * 4,
-    duration: Math.random() * 4 + 4,
+    delay: (Math.random() * 6).toFixed(1),
+    duration: (Math.random() * 5 + 6).toFixed(1),
 }));
 
 const PrizeSection = () => (
@@ -16,13 +16,13 @@ const PrizeSection = () => (
             className="absolute inset-0 pointer-events-none"
             style={{
                 background:
-                    "radial-gradient(ellipse at 50% 50%, hsl(45 80% 30% / 0.18) 0%, hsl(30 60% 15% / 0.12) 40%, transparent 70%)",
+                    "radial-gradient(ellipse at 50% 50%, hsl(45 80% 30% / 0.15) 0%, hsl(30 60% 15% / 0.1) 40%, transparent 70%)",
             }}
         />
 
-        {/* Floating particles */}
-        {floatingParticles.map((p) => (
-            <motion.div
+        {/* CSS-only floating particles */}
+        {particles.map((p) => (
+            <div
                 key={p.id}
                 className="absolute rounded-full pointer-events-none"
                 style={{
@@ -30,20 +30,9 @@ const PrizeSection = () => (
                     height: p.size,
                     left: `${p.x}%`,
                     top: "-10px",
-                    background:
-                        "radial-gradient(circle, hsl(45 90% 65%), hsl(35 80% 50%))",
-                    boxShadow: "0 0 8px hsl(45 90% 60% / 0.8)",
-                }}
-                animate={{
-                    y: ["0vh", "110vh"],
-                    opacity: [0, 1, 1, 0],
-                    scale: [0.5, 1, 1, 0.5],
-                }}
-                transition={{
-                    duration: p.duration,
-                    delay: p.delay,
-                    repeat: Infinity,
-                    ease: "linear",
+                    background: "radial-gradient(circle, hsl(45 90% 65%), hsl(35 80% 50%))",
+                    boxShadow: "0 0 6px hsl(45 90% 60% / 0.7)",
+                    animation: `fall ${p.duration}s linear ${p.delay}s infinite`,
                 }}
             />
         ))}
@@ -63,89 +52,65 @@ const PrizeSection = () => (
 
             {/* Main prize card */}
             <motion.div
-                initial={{ opacity: 0, scale: 0.85, y: 40 }}
+                initial={{ opacity: 0, scale: 0.88, y: 40 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, type: "spring" }}
-                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.7, type: "spring" }}
                 className="relative rounded-3xl p-10 md:p-16 mx-auto max-w-2xl"
                 style={{
                     background:
                         "linear-gradient(135deg, hsl(45 60% 10% / 0.9) 0%, hsl(30 50% 8% / 0.95) 50%, hsl(270 40% 10% / 0.9) 100%)",
                     border: "1.5px solid hsl(45 90% 55% / 0.5)",
                     boxShadow:
-                        "0 0 60px hsl(45 90% 50% / 0.25), 0 0 120px hsl(45 80% 40% / 0.12), inset 0 1px 0 hsl(45 90% 70% / 0.15)",
+                        "0 0 60px hsl(45 90% 50% / 0.2), 0 0 120px hsl(45 80% 40% / 0.1), inset 0 1px 0 hsl(45 90% 70% / 0.15)",
                 }}
             >
-                {/* Shimmer overlay */}
-                <motion.div
+                {/* CSS shimmer overlay */}
+                <div
                     className="absolute inset-0 rounded-3xl pointer-events-none overflow-hidden"
-                    style={{ opacity: 0.06 }}
+                    style={{ opacity: 0.07 }}
                 >
-                    <motion.div
-                        className="absolute inset-0"
+                    <div
                         style={{
+                            position: "absolute",
+                            inset: 0,
                             background:
                                 "linear-gradient(105deg, transparent 30%, hsl(45 90% 70%) 50%, transparent 70%)",
                             backgroundSize: "200% 100%",
+                            animation: "shimmer 4s linear 1s infinite",
                         }}
-                        animate={{ backgroundPosition: ["-100% 0", "200% 0"] }}
-                        transition={{ duration: 3, repeat: Infinity, ease: "linear", repeatDelay: 1 }}
                     />
-                </motion.div>
+                </div>
 
-                {/* Corner sparkles */}
-                <Sparkles
-                    size={18}
-                    className="absolute top-5 left-6"
-                    style={{ color: "hsl(45 90% 60% / 0.6)" }}
-                />
-                <Sparkles
-                    size={14}
-                    className="absolute top-5 right-8"
-                    style={{ color: "hsl(45 90% 60% / 0.4)" }}
-                />
-                <Star
-                    size={12}
-                    className="absolute bottom-6 left-10"
-                    style={{ color: "hsl(45 90% 60% / 0.35)" }}
-                    fill="currentColor"
-                />
-                <Star
-                    size={16}
-                    className="absolute bottom-5 right-6"
-                    style={{ color: "hsl(45 90% 60% / 0.5)" }}
-                    fill="currentColor"
-                />
+                {/* Corner sparkles (static, no animation) */}
+                <Sparkles size={18} className="absolute top-5 left-6" style={{ color: "hsl(45 90% 60% / 0.55)" }} />
+                <Sparkles size={14} className="absolute top-5 right-8" style={{ color: "hsl(45 90% 60% / 0.35)" }} />
+                <Star size={12} className="absolute bottom-6 left-10" style={{ color: "hsl(45 90% 60% / 0.3)" }} fill="currentColor" />
+                <Star size={16} className="absolute bottom-5 right-6" style={{ color: "hsl(45 90% 60% / 0.45)" }} fill="currentColor" />
 
-                {/* Trophy icon */}
-                <motion.div
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                    className="flex justify-center mb-6"
-                >
+                {/* Trophy icon — CSS float animation */}
+                <div className="flex justify-center mb-6">
                     <div
                         className="w-24 h-24 rounded-full flex items-center justify-center"
                         style={{
-                            background:
-                                "radial-gradient(circle, hsl(45 80% 20% / 0.8), hsl(30 60% 12% / 0.9))",
+                            background: "radial-gradient(circle, hsl(45 80% 20% / 0.8), hsl(30 60% 12% / 0.9))",
                             border: "2px solid hsl(45 90% 55% / 0.6)",
-                            boxShadow:
-                                "0 0 30px hsl(45 90% 55% / 0.4), 0 0 60px hsl(45 80% 45% / 0.2)",
+                            boxShadow: "0 0 30px hsl(45 90% 55% / 0.35), 0 0 60px hsl(45 80% 45% / 0.15)",
+                            animation: "float 3s ease-in-out infinite",
                         }}
                     >
                         <Trophy
                             size={44}
                             style={{
                                 color: "hsl(45 90% 62%)",
-                                filter: "drop-shadow(0 0 12px hsl(45 90% 60% / 0.8))",
+                                filter: "drop-shadow(0 0 12px hsl(45 90% 60% / 0.7))",
                             }}
                         />
                     </div>
-                </motion.div>
+                </div>
 
                 {/* Prize amount */}
-                <motion.h2
+                <h2
                     className="font-display font-black leading-none mb-3"
                     style={{
                         fontSize: "clamp(3.5rem, 10vw, 6rem)",
@@ -154,21 +119,16 @@ const PrizeSection = () => (
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
                         backgroundClip: "text",
-                        filter: "drop-shadow(0 0 30px hsl(45 80% 55% / 0.5))",
+                        filter: "drop-shadow(0 0 24px hsl(45 80% 55% / 0.4))",
                     }}
                 >
                     ₹10,000
-                </motion.h2>
+                </h2>
 
-                <p
-                    className="font-display font-semibold text-lg mb-2"
-                    style={{ color: "hsl(45 70% 65%)" }}
-                >
+                <p className="font-display font-semibold text-lg mb-2" style={{ color: "hsl(45 70% 65%)" }}>
                     Cash Prize
                 </p>
-                <p className="text-muted-foreground text-sm">
-                    Awarded to the winning team
-                </p>
+                <p className="text-muted-foreground text-sm">Awarded to the winning team</p>
 
                 {/* Bottom badges */}
                 <div className="flex items-center justify-center gap-4 mt-8">

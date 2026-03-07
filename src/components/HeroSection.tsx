@@ -1,49 +1,36 @@
 import { ChevronDown, Trophy } from "lucide-react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 
-const Stars = () => {
-  const starsArray = Array.from({ length: 80 }).map((_, i) => ({
-    id: i,
-    size: Math.random() * 2 + 1,
-    top: Math.random() * 100,
-    left: Math.random() * 100,
-    depth: Math.random() * 100, // Z-depth simulation
-    duration: Math.random() * 3 + 2,
-    delay: Math.random() * 3,
-  }));
+const starsData = Array.from({ length: 40 }).map((_, i) => ({
+  id: i,
+  size: Math.random() * 2 + 1,
+  top: Math.random() * 100,
+  left: Math.random() * 100,
+  duration: (Math.random() * 3 + 2).toFixed(1),
+  delay: (Math.random() * 4).toFixed(1),
+  opacity: (Math.random() * 0.5 + 0.3).toFixed(2),
+}));
 
-  const { scrollY } = useScroll();
-  const yRange = useTransform(scrollY, [0, 800], [0, -300]);
+const Stars = () => (
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    {starsData.map((star) => (
+      <div
+        key={star.id}
+        className="absolute rounded-full bg-white"
+        style={{
+          width: star.size + "px",
+          height: star.size + "px",
+          top: star.top + "%",
+          left: star.left + "%",
+          opacity: star.opacity,
+          animation: `twinkle ${star.duration}s ease-in-out ${star.delay}s infinite`,
+        }}
+      />
+    ))}
+  </div>
+);
 
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ perspective: "1000px" }}>
-      {starsArray.map((star) => (
-        <motion.div
-          key={star.id}
-          className="absolute rounded-full bg-foreground/80"
-          style={{
-            width: star.size + "px",
-            height: star.size + "px",
-            top: star.top + "%",
-            left: star.left + "%",
-            z: star.depth,
-            opacity: useTransform(scrollY, [0, 500], [0.8, 0]),
-          }}
-          animate={{
-            opacity: [0.2, 1, 0.2],
-          }}
-          transition={{
-            duration: star.duration,
-            repeat: Infinity,
-            delay: star.delay,
-            ease: "easeInOut",
-          }}
-        />
-      ))}
-    </div>
-  );
-};
 
 const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
