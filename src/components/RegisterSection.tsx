@@ -19,7 +19,7 @@ const RegisterSection = () => (
           Registration Fee: <span className="font-display font-bold text-foreground">₹200</span> per head
         </p>
         <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfcuXcn7lFSqHfIY47O9ZfjRrbsYwM6vajyVHl9AEXDKWGyeg/formResponse"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSezDufiSg5Lj8v-4IS-vQyR-8M7qK7H70Rb-cCE4h9_I_5wUQ/viewform?usp=publish-editor"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-10 py-4 rounded-full font-display font-bold text-primary-foreground text-lg transition-all hover:scale-105"
