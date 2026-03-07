@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Trophy } from "lucide-react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 
@@ -90,7 +90,7 @@ const HeroSection = () => {
       />
 
       <motion.div
-        className="relative z-10 text-center px-4 max-w-4xl mx-auto"
+        className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-24"
         style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
       >
         <motion.p
@@ -150,21 +150,40 @@ const HeroSection = () => {
           13 March &bull; 10:00 AM – 4:00 PM &bull; SNS College of Technology
         </motion.p>
 
-        <motion.a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfcuXcn7lFSqHfIY47O9ZfjRrbsYwM6vajyVHl9AEXDKWGyeg/formResponse"
-          target="_blank"
-          rel="noopener noreferrer"
-          whileHover={{ scale: 1.1, translateZ: "60px" }}
-          whileTap={{ scale: 0.95 }}
-          className="inline-flex items-center gap-2 px-8 py-3 rounded-full font-semibold text-primary-foreground transition-all"
-          style={{
-            background: "linear-gradient(135deg, hsl(280 80% 55%), hsl(320 70% 50%), hsl(340 80% 50%))",
-            boxShadow: "0 10px 30px -10px hsl(280 80% 55%)",
-            translateZ: "40px"
-          }}
-        >
-          Register Now
-        </motion.a>
+        <div className="flex flex-col items-center gap-5">
+          <motion.a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfcuXcn7lFSqHfIY47O9ZfjRrbsYwM6vajyVHl9AEXDKWGyeg/formResponse"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1, translateZ: "60px" }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-full font-semibold text-primary-foreground transition-all"
+            style={{
+              background: "linear-gradient(135deg, hsl(280 80% 55%), hsl(320 70% 50%), hsl(340 80% 50%))",
+              boxShadow: "0 10px 30px -10px hsl(280 80% 55%)",
+              translateZ: "40px"
+            }}
+          >
+            Register Now
+          </motion.a>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+            className="flex items-center gap-3 px-7 py-3 rounded-full"
+            style={{
+              background: "linear-gradient(135deg, hsl(45 80% 12% / 0.85), hsl(30 60% 8% / 0.9))",
+              border: "1.5px solid hsl(45 90% 55% / 0.7)",
+              boxShadow: "0 0 24px hsl(45 90% 55% / 0.35), 0 0 60px hsl(45 80% 45% / 0.15)",
+            }}
+          >
+            <Trophy size={22} style={{ color: "hsl(45 90% 62%)", filter: "drop-shadow(0 0 6px hsl(45 90% 60% / 0.7))" }} />
+            <span className="font-display font-black text-lg tracking-wide" style={{ color: "hsl(45 90% 68%)", textShadow: "0 0 20px hsl(45 90% 55% / 0.6)" }}>
+              Cash Prize: ₹10,000
+            </span>
+          </motion.div>
+        </div>
       </motion.div>
 
       <motion.a
