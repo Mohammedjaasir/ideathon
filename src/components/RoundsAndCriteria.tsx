@@ -3,25 +3,26 @@ import { ListChecks, Timer, Lightbulb } from "lucide-react";
 
 const rounds = [
     {
-        title: "Problem Reveal & Idea Pitch",
-        desc: "The problem statements will be revealed on the spot during the event. Teams must choose one of the given problem statements and quickly brainstorm an innovative solution.",
+        title: "Round Details",
+        desc: "The ideathon will be conducted in a single combined round. At the beginning of the event, multiple real-world problem statements will be revealed on the spot. Participants must choose one of the given problems and work on designing an innovative AI-based solution. After the problem statements are announced, teams will be given dedicated time during the event to:",
         details: [
-            "The problem they aim to address",
-            "Their proposed solution",
-            "How Agentic AI can be used to solve the problem",
-            "Shortlisted teams based on innovation, clarity, and feasibility",
+            "Understand and analyze the selected problem",
+            "Brainstorm possible solution ideas",
+            "Research and explore how AI technologies can be applied",
+            "Design a solution approach or system workflow",
+            "Prepare a short presentation explaining their idea",
         ],
+        footer: "Participants are encouraged to think creatively and propose practical AI-driven solutions. Teams may present their approach using conceptual architectures, workflow diagrams, prototype ideas, or solution strategies.",
         icon: Timer
     },
     {
-        title: "Innovation Sprint & Solution Development",
-        desc: "teams will be given dedicated time to research, refine their solution, and develop a conceptual prototype or workflow for their idea.",
+        title: "Final Idea Pitch",
+        desc: "At the end of the ideation period, each team will deliver a short presentation pitch to the judges. During the pitch, teams should clearly explain:",
         details: [
-            "Architecture diagrams",
-            "System workflows",
-            "UI/UX mockups",
-            "Conceptual prototypes",
-            "Implementation strategies",
+            "The problem they selected",
+            "Their proposed AI-based solution",
+            "The approach or workflow of their system",
+            "The potential impact of their idea in solving the real-world problem",
         ],
         icon: Lightbulb
     },
@@ -66,6 +67,11 @@ const RoundsAndCriteria = () => (
                                         </li>
                                     ))}
                                 </ul>
+                                {'footer' in round && (
+                                    <p className="text-muted-foreground text-sm mt-6 leading-relaxed">
+                                        {round.footer}
+                                    </p>
+                                )}
                             </motion.div>
                         ))}
                     </div>
@@ -113,8 +119,9 @@ const RoundsAndCriteria = () => (
                             <h2 className="font-display text-3xl font-bold gradient-text">Who Can Participate?</h2>
                         </div>
                         <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                            Students from any discipline who are passionate about innovation, technology, and problem-solving
-                            are encouraged to participate. Bring your creativity and innovative mindset to the stage!
+                            Students from any discipline who are interested in Artificial Intelligence, innovation, and problem solving are encouraged to participate. The event welcomes participants from all academic years, providing an opportunity to collaborate, learn, and showcase creative ideas.
+                            <br /><br />
+                            Join us for an exciting ideathon where ideas meet innovation and AI is used to design solutions for real-world challenges.
                         </p>
                         <div className="inline-block px-6 py-2 rounded-full bg-accent/10 border border-accent/20">
                             <p className="text-xs font-bold text-accent tracking-widest uppercase">Any discipline • Tech Enthusiasts • Thinkers</p>

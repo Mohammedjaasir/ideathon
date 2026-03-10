@@ -22,15 +22,14 @@ const AboutSection = () => (
   <section id="about" className="py-24 px-4 relative">
     <div className="max-w-6xl mx-auto">
       <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-4 gradient-text">
-        Agentic AI Innovation Challenge
+        AI Innovation Challenge
       </h2>
       <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-16 text-sm md:text-base leading-relaxed">
-        The Agentic AI Ideathon is an inter-college innovation challenge designed to bring together creative thinkers,
-        problem solvers, and technology enthusiasts to design impactful solutions using the concept of Agentic AI.
+        The Department of Artificial Intelligence & Data Science at SNS College of Engineering, Coimbatore presents an Inter-College Ideathon, inviting students to explore innovative solutions for real-world problems using Artificial Intelligence.
         <br /><br />
-        Agentic AI refers to intelligent systems capable of making decisions, planning tasks, and executing actions
-        autonomously to achieve a defined goal. Participants will apply this concept to solve real-world problems
-        through innovative and practical ideas.
+        This ideathon brings together students from different academic years and skill levels to think creatively and design impactful AI-driven solutions. Whether you are just beginning to explore AI concepts or already working with advanced technologies, this platform encourages you to collaborate, brainstorm, and innovate.
+        <br /><br />
+        Participants will analyze real-life challenges, develop AI-based approaches, and present their ideas before a panel of judges.
       </p>
 
       <div className="grid md:grid-cols-3 gap-6">

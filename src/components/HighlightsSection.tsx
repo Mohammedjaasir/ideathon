@@ -19,10 +19,10 @@ const HighlightsSection = () => (
           Why Participate?
         </h2>
         <div className="glass inline-block px-6 py-2 rounded-full border-primary/20 mb-6">
-          <p className="text-xs uppercase tracking-widest text-primary font-bold">Domain: Agentic AI</p>
+          <p className="text-xs uppercase tracking-widest text-primary font-bold">Domain: Artificial Intelligence (Mixed AI Domain)</p>
         </div>
         <p className="text-muted-foreground max-w-xl mx-auto text-sm">
-          Bring your creativity and building solutions that shape the future of autonomous systems.
+          The ideathon focuses on applying AI to solve real-world problems. Problem statements may range from basic to advanced levels, ensuring participants from different academic years can contribute meaningful ideas and solutions.
         </p>
       </div>
 

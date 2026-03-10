@@ -94,7 +94,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-base md:text-lg text-muted-foreground mb-2"
         >
-          Agentic AI Innovation Challenge
+          AI Innovation Challenge
         </motion.p>
         <motion.p
           initial={{ opacity: 0, scale: 0.9 }}
@@ -102,7 +102,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-sm md:text-base font-display tracking-widest text-secondary mb-6"
         >
-          TEXPERIA' 2026
+          SNS College of Engineering
         </motion.p>
 
         <motion.h1
@@ -125,7 +125,7 @@ const HeroSection = () => {
           className="text-lg md:text-xl lg:text-2xl font-light text-foreground/90 mb-8 text-glow-sm max-w-2xl mx-auto leading-relaxed"
           style={{ translateZ: "30px" }}
         >
-          Are you ready to explore how intelligent systems can think, plan, and act autonomously?
+          The Department of Artificial Intelligence & Data Science presents an Inter-College Ideathon, inviting students to explore innovative solutions.
         </motion.p>
 
         <motion.p
@@ -134,7 +134,7 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 0.6 }}
           className="text-muted-foreground mb-10 text-sm md:text-base"
         >
-          13 March &bull; 10:00 AM – 4:00 PM &bull; SNS College of Technology
+          13 March &bull; 9:30 AM – 1:00 PM &bull; SNS College of Engineering, Coimbatore
         </motion.p>
 
         <div className="flex flex-col items-center gap-5">
