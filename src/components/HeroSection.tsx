@@ -1,4 +1,4 @@
-import { ChevronDown, Trophy } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { motion, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 
@@ -154,22 +154,7 @@ const HeroSection = () => {
             Register Now
           </motion.a>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="flex items-center gap-3 px-7 py-3 rounded-full"
-            style={{
-              background: "linear-gradient(135deg, hsl(45 80% 12% / 0.85), hsl(30 60% 8% / 0.9))",
-              border: "1.5px solid hsl(45 90% 55% / 0.7)",
-              boxShadow: "0 0 24px hsl(45 90% 55% / 0.35), 0 0 60px hsl(45 80% 45% / 0.15)",
-            }}
-          >
-            <Trophy size={22} style={{ color: "hsl(45 90% 62%)", filter: "drop-shadow(0 0 6px hsl(45 90% 60% / 0.7))" }} />
-            <span className="font-display font-black text-lg tracking-wide" style={{ color: "hsl(45 90% 68%)", textShadow: "0 0 20px hsl(45 90% 55% / 0.6)" }}>
-              Cash Prize: ₹10,000
-            </span>
-          </motion.div>
+
         </div>
       </motion.div>
 

@@ -1,27 +1,30 @@
 import { motion } from "framer-motion";
-import { ListChecks, Timer, Workflow, Lightbulb } from "lucide-react";
+import { ListChecks, Timer, Lightbulb } from "lucide-react";
 
 const rounds = [
     {
-        title: "Round 1 – Problem Reveal & Idea Pitch",
-        desc: "The problem statements will be revealed on the spot. Teams brainstorm and present a short pitch.",
+        title: "Problem Reveal & Idea Pitch",
+        desc: "The problem statements will be revealed on the spot during the event. Teams must choose one of the given problem statements and quickly brainstorm an innovative solution.",
         details: [
-            "Problem statement revealed during the event",
-            "Quick brainstorming for innovative solutions",
-            "Pitch: Problem context, Proposed solution, Agentic AI execution"
+            "The problem they aim to address",
+            "Their proposed solution",
+            "How Agentic AI can be used to solve the problem",
+            "Shortlisted teams based on innovation, clarity, and feasibility",
         ],
         icon: Timer
     },
     {
-        title: "Round 2 – Innovation Sprint",
-        desc: "Shortlisted teams research and refine their solutions into conceptual prototypes or workflows.",
+        title: "Innovation Sprint & Solution Development",
+        desc: "teams will be given dedicated time to research, refine their solution, and develop a conceptual prototype or workflow for their idea.",
         details: [
-            "Architecture diagrams & system workflows",
-            "UI/UX mockups & conceptual prototypes",
-            "Technical implementation strategies & real-world impact"
+            "Architecture diagrams",
+            "System workflows",
+            "UI/UX mockups",
+            "Conceptual prototypes",
+            "Implementation strategies",
         ],
-        icon: Workflow
-    }
+        icon: Lightbulb
+    },
 ];
 
 const criteria = [

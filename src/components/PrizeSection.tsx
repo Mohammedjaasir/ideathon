@@ -109,23 +109,8 @@ const PrizeSection = () => (
                     </div>
                 </div>
 
-                {/* Prize amount */}
-                <h2
-                    className="font-display font-black leading-none mb-3"
-                    style={{
-                        fontSize: "clamp(3.5rem, 10vw, 6rem)",
-                        background:
-                            "linear-gradient(135deg, hsl(45 90% 80%) 0%, hsl(38 85% 60%) 40%, hsl(28 80% 55%) 100%)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                        backgroundClip: "text",
-                        filter: "drop-shadow(0 0 24px hsl(45 80% 55% / 0.4))",
-                    }}
-                >
-                    ₹10,000
-                </h2>
 
-                <p className="font-display font-semibold text-lg mb-2" style={{ color: "hsl(45 70% 65%)" }}>
+<p className="font-display font-semibold text-lg mb-2" style={{ color: "hsl(45 70% 65%)" }}>
                     Cash Prize
                 </p>
                 <p className="text-muted-foreground text-sm">Awarded to the winning team</p>
